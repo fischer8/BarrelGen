@@ -1,7 +1,7 @@
 const fs = require('fs');
 const path = require('path');
 
-const directoryFolder = '/home/fischer/Desktop/test/test/Components';
+const directoryFolder = '/home/fischer/Desktop/test/Components';
 
 function listDirectoryFiles(directory) {
   const files = [];
@@ -17,17 +17,6 @@ function listDirectoryFiles(directory) {
   });
   return files;
 }
-
-// function listDirectoryFolders(directory) {
-//   const folders = [];
-//   fs.readdirSync(directory).forEach((file_name) => {
-//     const file_path = path.join(directory, file_name);
-//     if (fs.statSync(file_path).isDirectory()) {
-//       folders.push(file_name);
-//     }
-//   });
-//   return folders;
-// }
 
 const files = [];
 const directories = [];

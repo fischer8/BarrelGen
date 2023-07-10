@@ -1,6 +1,6 @@
 import os
 
-directory_folder = '/home/fischer/Desktop/test/test/Components'
+directory_folder = '/home/fischer/Desktop/test/Components'
 
 def list_directory_files(directory):
     files = []
@@ -36,7 +36,6 @@ def generate_auto_import(names, output_file_path):
 
 def traverse_current_directory(directory):
     file_names = list_directory_files(directory)
-    # if file_names and not os.path.exists(os.path.join(directory, 'index.js')):
     output_file_name = 'index.js'
     output_file_path = os.path.join(directory, output_file_name)
     generate_auto_import(file_names, output_file_path)

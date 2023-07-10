@@ -4,5 +4,5 @@ Para usar é só colocar o path da pasta que necessita o barrel na variavel dire
 
 ```
 Ex:
-directory_folder = '/home/fischer/Desktop/test/test/Components'
+directory_folder = '/home/fischer/Desktop/test/Components'
 ```
