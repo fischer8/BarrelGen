@@ -35,7 +35,7 @@ def gerar_root_index(caminho_arquivo_saida):
 
 arquivos2 = []
 
-diretorio_pasta = '/home/fischer/Desktop/sanofi-app-tev/codepass/src/components'
+diretorio_pasta = '/home/fischer/Desktop/test/test/Components'
 caminho_arquivo_saida = os.path.join(diretorio_pasta, 'index.js')
 
 percorrer_diretorio_atual(diretorio_pasta)

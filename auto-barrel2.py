@@ -17,19 +17,46 @@ def listar_pastas_diretorio(diretorio):
     return diretorios
 
 diretorios = []
-
 def gerar_auto_import(nomes, caminho_arquivo_saida):
+    imports = {}
     with open(caminho_arquivo_saida, 'w') as arquivo:
-        for nome in nomes:
+        for nome in sorted(nomes):  # Ordenar os nomes em ordem alfabética
             diretorios.append(caminho_arquivo_saida.split('/')[1::][-2])
+            diretorio = caminho_arquivo_saida.split('/')[1::][-2]
             nome_sem_extensao = os.path.splitext(nome)[0]
             arquivos2.append(nome_sem_extensao)
-            arquivo.write("import " + nome_sem_extensao + " from './"+ nome_sem_extensao + "';\n")
-        arquivo.write('\nexport {\n')
-        for nome in nomes:
-            nome_sem_extensao = os.path.splitext(nome)[0]
-            arquivo.write(f'  {nome_sem_extensao},\n')
+            imports.setdefault(diretorio, []).append(nome_sem_extensao)
+
+        for diretorio, componentes in imports.items():
+            componentes_ordenados = sorted(componentes)
+            linha_import = "import {"
+            for componente in componentes_ordenados:
+                linha_import += f"\n  {componente},"
+            linha_import += f"\n}} from './';"
+            arquivo.write(linha_import + '\n')
+
+        arquivo.write('\nexport {')
+        for diretorio, componentes in imports.items():
+            componentes_ordenados = sorted(componentes)
+            linha_export = ""
+            for componente in componentes_ordenados:
+                linha_export += f"  {componente},\n"
+            arquivo.write(f"\n{linha_export}")
         arquivo.write('};\n')
+
+
+# def gerar_auto_import(nomes, caminho_arquivo_saida):
+#     with open(caminho_arquivo_saida, 'w') as arquivo:
+#         for nome in nomes:
+#             diretorios.append(caminho_arquivo_saida.split('/')[1::][-2])
+#             nome_sem_extensao = os.path.splitext(nome)[0]
+#             arquivos2.append(nome_sem_extensao)
+#             arquivo.write("import " + nome_sem_extensao + " from './"+ nome_sem_extensao + "';\n")
+#         arquivo.write('\nexport {\n')
+#         for nome in nomes:
+#             nome_sem_extensao = os.path.splitext(nome)[0]
+#             arquivo.write(f'  {nome_sem_extensao},\n')
+#         arquivo.write('};\n')
 
 def percorrer_diretorio_atual(diretorio):
     nomes_arquivos = listar_arquivos_diretorio(diretorio)
