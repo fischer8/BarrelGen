@@ -1,5 +1,7 @@
 import os
 
+directory_folder = '/home/fischer/Desktop/test/test/Components'
+
 def list_directory_files(directory):
     files = []
     for file_name in os.listdir(directory):
@@ -92,8 +94,6 @@ def generate_root_index(output_file_path):
             file.write(f'  {component_without_extension},\n')
         file.write('};\n')
 
-
-directory_folder = '/home/fischer/Desktop/test/test/Components'
 output_file_path = os.path.join(directory_folder, 'index.js')
 
 traverse_current_directory(directory_folder)
