@@ -20,31 +20,44 @@ files = []
 directories = []
 
 def generate_auto_import(names, output_file_path):
-    imports = {}
-    with open(output_file_path, 'w') as file:
-        for name in sorted(names):  # Sort names in alphabetical order
+    with open(output_file_path, 'w') as arquivo:
+        for name in names:
             directories.append(output_file_path.split('/')[1::][-2])
-            directory = output_file_path.split('/')[1::][-2]
             name_without_extension = os.path.splitext(name)[0]
             files.append(name_without_extension)
-            imports.setdefault(directory, []).append(name_without_extension)
+            arquivo.write("import " + name_without_extension + " from './"+ name_without_extension + "';\n")
+        arquivo.write('\nexport {\n')
+        for name in names:
+            name_without_extension = os.path.splitext(name)[0]
+            arquivo.write(f'  {name_without_extension},\n')
+        arquivo.write('};\n')
 
-        for directory, components in imports.items():
-            sorted_components = sorted(components)
-            import_line = "import {"
-            for component in sorted_components:
-                import_line += f"\n  {component},"
-            import_line += f"\n}} from './';"
-            file.write(import_line + '\n')
+# def generate_auto_import(names, output_file_path):
+#     imports = {}
+#     with open(output_file_path, 'w') as file:
+#         for name in sorted(names):  # Sort names in alphabetical order
+#             directories.append(output_file_path.split('/')[1::][-2])
+#             directory = output_file_path.split('/')[1::][-2]
+#             name_without_extension = os.path.splitext(name)[0]
+#             files.append(name_without_extension)
+#             imports.setdefault(directory, []).append(name_without_extension)
 
-        file.write('\nexport {')
-        for directory, components in imports.items():
-            sorted_components = sorted(components)
-            export_line = ""
-            for component in sorted_components:
-                export_line += f"  {component},\n"
-            file.write(f"\n{export_line}")
-        file.write('};\n')
+#         for directory, components in imports.items():
+#             sorted_components = sorted(components)
+#             import_line = "import {"
+#             for component in sorted_components:
+#                 import_line += f"\n  {component},"
+#             import_line += f"\n}} from './';"
+#             file.write(import_line + '\n')
+
+#         file.write('\nexport {')
+#         for directory, components in imports.items():
+#             sorted_components = sorted(components)
+#             export_line = ""
+#             for component in sorted_components:
+#                 export_line += f"  {component},\n"
+#             file.write(f"\n{export_line}")
+#         file.write('};\n')
 
 def traverse_current_directory(directory):
     file_names = list_directory_files(directory)
