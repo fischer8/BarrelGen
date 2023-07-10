@@ -34,33 +34,6 @@ def generate_auto_import(names, output_file_path):
             arquivo.write(f'  {name_without_extension},\n')
         arquivo.write('};\n')
 
-# def generate_auto_import(names, output_file_path):
-#     imports = {}
-#     with open(output_file_path, 'w') as file:
-#         for name in sorted(names):  # Sort names in alphabetical order
-#             directories.append(output_file_path.split('/')[1::][-2])
-#             directory = output_file_path.split('/')[1::][-2]
-#             name_without_extension = os.path.splitext(name)[0]
-#             files.append(name_without_extension)
-#             imports.setdefault(directory, []).append(name_without_extension)
-
-#         for directory, components in imports.items():
-#             sorted_components = sorted(components)
-#             import_line = "import {"
-#             for component in sorted_components:
-#                 import_line += f"\n  {component},"
-#             import_line += f"\n}} from './';"
-#             file.write(import_line + '\n')
-
-#         file.write('\nexport {')
-#         for directory, components in imports.items():
-#             sorted_components = sorted(components)
-#             export_line = ""
-#             for component in sorted_components:
-#                 export_line += f"  {component},\n"
-#             file.write(f"\n{export_line}")
-#         file.write('};\n')
-
 def traverse_current_directory(directory):
     file_names = list_directory_files(directory)
     # if file_names and not os.path.exists(os.path.join(directory, 'index.js')):
