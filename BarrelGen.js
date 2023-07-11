@@ -1,6 +1,5 @@
 const fs = require('fs');
 const path = require('path');
-
 const directoryFolder = '/home/fischer/Desktop/test/Components';
 
 function listDirectoryFiles(directory) {

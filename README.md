@@ -1,8 +1,26 @@
-Esse código tem como objetivo gerar um arquivo index.js que realiza o chamado "barrel" de módulos em um diretório de componentes. O "barrel" é uma prática comum em projetos JavaScript/TypeScript que consiste em criar um arquivo de índice que exporta todos os componentes contidos em um diretório, facilitando sua importação em outros arquivos.
+# BarrelGen
 
-Para usar é só colocar o path da pasta que necessita o barrel na variavel directory_folder que está na linha 3 e executar o script
+Este script tem como objetivo facilitar a criação de um arquivo `index.js` que realiza o "barrel" de módulos em um diretório de componentes. O "barrel" consiste em criar um arquivo de índice que exporta todos os componentes contidos em um diretório, facilitando sua importação em outros arquivos.
 
+![Demonstração](/barrel-gen.gif)
+
+Para determinar o path do diretório que necessita o barrel, substitua o valor da variavel na linha 3 directory_folder (python) ou directoryFolder (javasript) com uma string do path
+
+Exemplo (javascript):
 ```
-Ex:
-directory_folder = '/home/fischer/Desktop/test/Components'
+const directoryFolder = '/home/fischer/Desktop/test/Components';
+```
+
+#
+
+Para executar o script:
+
+Javascript
+```
+$ node auto-barrel.js
+```
+
+Python
+```
+$ python3 auto-barrel.py
 ```
