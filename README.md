@@ -17,10 +17,10 @@ Para executar o script:
 
 Javascript
 ```
-$ node auto-barrel.js
+$ node barrelGen.js
 ```
 
 Python
 ```
-$ python3 auto-barrel.py
+$ python3 barrelGen.py
 ```
