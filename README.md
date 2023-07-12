@@ -13,14 +13,3 @@ const directoryFolder = '/home/fischer/Desktop/test/Components';
 
 #
 
-Para executar o script:
-
-Javascript
-```
-$ node barrelGen.js
-```
-
-Python
-```
-$ python3 barrelGen.py
-```

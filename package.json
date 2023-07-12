@@ -1,0 +1,24 @@
+{
+  "name": "barrel-gen",
+  "version": "1.0.0",
+  "description": "Este script tem como objetivo facilitar a criação de um arquivo `index.js` que realiza o \"barrel\" de módulos em um diretório de componentes. O \"barrel\" consiste em criar um arquivo de índice que exporta todos os componentes contidos em um diretório, facilitando sua importação em outros arquivos.",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "barrelgen": "node index.js"
+  },
+  "author": "fischer8",
+  "license": "ISC",
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/fischer8/BarrelGen.git"
+  },
+  "bugs": {
+    "url": "https://github.com/fischer8/BarrelGen/issues"
+  },
+  "homepage": "https://github.com/fischer8/BarrelGen#readme",
+  "keywords": [
+    "barrel",
+    "generator"
+  ]
+}
