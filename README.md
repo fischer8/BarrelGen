@@ -4,12 +4,20 @@ Este script tem como objetivo facilitar a criação de um arquivo `index.js` que
 
 ![Demonstração](/barrel-gen.gif)
 
-Para determinar no script o path do diretório que necessita o barrel, substitua o valor da variavel na linha 3 directory_folder (python) ou directoryFolder (javasript) com uma string com o path
+Para usar o script, utilize o comando:
 
-Exemplo (javascript):
 ```
-const directoryFolder = '/home/fischer/Desktop/test/Components';
+$ npx barrelgen /path/do/diretorio
 ```
+#
 
+Ou instale globalmente 
+```
+$ npm install -g barrelgen
+```
+Para
+```
+$ barrelgen /path/do/diretorio
+```
 #
 
