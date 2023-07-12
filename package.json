@@ -5,7 +5,6 @@
   "main": "",
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1",
-    "barrelgen": "node index.js",
     "jsbarrelgen": "node src/barrelGen.js",
     "pybarrelgen": "python3 src/barrelGen.py"
   },
