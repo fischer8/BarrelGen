@@ -1,6 +1,6 @@
 import os
 
-directory_folder = '/home/fischer/Desktop/test/Components'
+directory_folder = ''
 
 def list_directory_files(directory):
     files = []
