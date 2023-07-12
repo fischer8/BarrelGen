@@ -1,17 +1,17 @@
 # BarrelGen
 
-Este script tem como objetivo facilitar a criação de um arquivo `index.js` que realiza o "barrel" de módulos em um diretório de componentes. O "barrel" consiste em criar um arquivo de índice que exporta todos os componentes contidos em um diretório, facilitando sua importação em outros arquivos.
+This script aims to facilitate the creation of an index.js file that performs module "barreling" in a components directory. The "barrel" consists of creating an index file that exports all the components contained in a directory, making it easier to import them into other files.
 
-![Demonstração](/barrel-gen.gif)
+![gif](/barrel-gen.gif)
 
-Para usar o script, utilize o comando:
+To use the script, use the following command:
 
 ```
 $ npx barrelgen /path/do/diretorio
 ```
 #
 
-Ou instale globalmente 
+Or install it globally:
 ```
 $ npm install -g barrelgen
 
