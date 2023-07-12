@@ -1,7 +1,7 @@
 {
   "name": "barrelgen",
   "version": "1.0.0",
-  "description": "Este script tem como objetivo facilitar a criação de um arquivo `index.js` que realiza o \"barrel\" de módulos em um diretório de componentes. O \"barrel\" consiste em criar um arquivo de índice que exporta todos os componentes contidos em um diretório, facilitando sua importação em outros arquivos.",
+  "description": "This script aims to facilitate the creation of an index.js file that performs module 'barreling' in a components directory. The 'barrel' consists of creating an index file that exports all the components contained in a directory, making it easier to import them into other files.",
   "main": "index.js",
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1",
