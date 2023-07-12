@@ -14,9 +14,8 @@ $ npx barrelgen /path/do/diretorio
 Ou instale globalmente 
 ```
 $ npm install -g barrelgen
-```
-Para
-```
+
+
 $ barrelgen /path/do/diretorio
 ```
 #
