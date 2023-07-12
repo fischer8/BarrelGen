@@ -7,7 +7,7 @@ This script aims to facilitate the creation of an index.js file that performs mo
 To use the script, use the following command:
 
 ```
-$ npx barrelgen /path/do/diretorio
+$ npx barrelgen /path/to/directory
 ```
 #
 
@@ -16,7 +16,7 @@ Or install it globally:
 $ npm install -g barrelgen
 
 
-$ barrelgen /path/do/diretorio
+$ barrelgen /path/to/directory
 ```
 #
 
