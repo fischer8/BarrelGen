@@ -1,8 +1,9 @@
 #!/usr/bin/env python3
 
 import os
+import sys
 
-directory_folder = ''
+directory_folder = sys.argv[1]
 
 def list_directory_files(directory):
     files = []

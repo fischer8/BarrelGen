@@ -1,22 +1,19 @@
 # BarrelGen
 
-This script aims to facilitate the creation of an index.js file that performs module "barreling" in a components directory. The "barrel" consists of creating an index file that exports all the components contained in a directory, making it easier to import them into other files.
+This is the branch for the source files. The BarrelGen has been developed in two languages: Python and JavaScript.
 
-![gif](/barrel-gen.gif)
-
-To use the script, use the following command:
-
-```
-$ npx barrelgen /path/to/directory
-```
 #
 
-Or install it globally:
+Javascript
 ```
-$ npm install -g barrelgen
+$ npm run jsbarrelgen /path/to/directory
+```
 
+#
 
-$ barrelgen /path/to/directory
+Python
+```
+$ npm run pybarrelgen /path/to/directory
 ```
 #
 

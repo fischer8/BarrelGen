@@ -2,7 +2,7 @@
 
 const fs = require('fs');
 const path = require('path');
-const directoryFolder = '';
+const directoryFolder = process.argv[2];
 
 function listDirectoryFiles(directory) {
   const files = [];
