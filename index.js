@@ -77,8 +77,7 @@ function generateRootIndex(output_file_path) {
     }
     file.write(importLine);
   }
-  const bigSorted = bigImports.sort((imp) => imp.length - imp.length);
-  bigSorted.forEach((bigImport) => {
+  bigImports.sort((imp) => imp.length - imp.length).forEach((bigImport) => {
     file.write(bigImport)
   })
 
