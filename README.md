@@ -4,7 +4,7 @@ This script aims to facilitate the creation of an index.js file that performs mo
 
 ![gif](/barrel-gen.gif)
 
-To use the script, use the following command:
+To run the script, use the following command:
 
 ```
 $ npx barrelgen /path/to/directory
