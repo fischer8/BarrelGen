@@ -1,6 +1,6 @@
 # BarrelGen
 
-This script create an index.js file that performs module "barreling" in a components directory. The "barrel" consists of creating an index file that exports all the components contained in a directory, making it easier to import them into other files.
+This script generates an index.js file that performs module "barreling" in a components directory. The "barrel" consists of creating an index file that exports all the components contained in a directory, making it easier to import them into other files.
 
 ![gif](/barrel-gen.gif)
 
