@@ -11,7 +11,7 @@
     "start": "node index.js"
   },
   "author": "fischer8",
-  "license": "ISC",
+  "license": "MIT",
   "repository": {
     "type": "git",
     "url": "https://github.com/fischer8/BarrelGen.git"

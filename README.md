@@ -5,22 +5,18 @@ This script generates an index.js file that performs sorted module "barreling" i
 ![Example](/barrelgen.gif)
 
 <h3>
-  To run the script, use the following command:
-</h3>
-
-```
-$ npx barrelgen /path/to/directory
-```
-#
-
-<h3>
-  Or install it globally:
+  Install it globally:
 </h3>
 
 ```
 $ npm install -g barrelgen
+```
 
+<h4>
+  To run the script use the following command:
+</h4>
 
+```
 $ barrelgen /path/to/directory
 ```
 
