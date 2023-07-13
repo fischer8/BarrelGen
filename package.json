@@ -10,14 +10,14 @@
     "test": "echo \"Error: no test specified\" && exit 1",
     "start": "node index.js"
   },
-  "author": "fischer8",
+  "author": {
+    "name": "Henrique Fischer",
+    "url": "https://github.com/fischer8/"
+  },
   "license": "MIT",
   "repository": {
     "type": "git",
     "url": "https://github.com/fischer8/BarrelGen.git"
-  },
-  "bugs": {
-    "url": "https://github.com/fischer8/BarrelGen/issues"
   },
   "homepage": "https://github.com/fischer8/BarrelGen#readme",
   "keywords": [
