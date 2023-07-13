@@ -66,11 +66,21 @@ function generateRootIndex(output_file_path) {
 
   const sortedImports = Object.fromEntries(Object.entries(imports).sort());
 
+  const bigImports = []
   for (const [directory, components] of Object.entries(sortedImports)) {
     const sortedComponents = components.sort();
-    const importLine = `import { ${sortedComponents.join(', ')} } from './${directory}';`;
-    file.write(importLine + '\n');
+    let importLine = '';
+    if(sortedComponents.length > 1){
+      bigImports.push(`\nimport { \n  ${sortedComponents.join(',\n  ')}\n} from './${directory}';\n`);
+    } else {
+      importLine = `import { ${sortedComponents.join(', ')} } from './${directory}';\n`;
+    }
+    file.write(importLine);
   }
+  const bigSorted = bigImports.sort((imp) => imp.length - imp.length);
+  bigSorted.forEach((bigImport) => {
+    file.write(bigImport)
+  })
 
   file.write('\nexport {\n');
   const sortedFiles = files.sort();
