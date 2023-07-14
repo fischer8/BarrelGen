@@ -22,25 +22,13 @@ function listDirectoryFiles(directory) {
 
 const files = [];
 const directories = [];
-const allDirectories = { dirs: [], files: [] };
 
-const allDirectories2 = {
-  0: {
-    dirs: 'maincomponents',
-    files: ['button', 'nav']
-  }
-};
-
-console.log(allDirectories.length);
-
-function generateAutoImport(names, output_file_path, depth) {
+function generateAutoImport(names, output_file_path) {
   const arquivo = fs.createWriteStream(output_file_path);
-  allDirectories[depth] = {dirs: [...allDirectories[depth].dirs, output_file_path.split('/')[output_file_path.split('/').length - 2]], files: []};
   names.forEach((name) => {
     directories.push(output_file_path.split('/')[output_file_path.split('/').length - 2]);
     const name_without_extension = path.parse(name).name;
     files.push(name_without_extension);
-    allDirectories[depth].files = [...allDirectories[depth].files, name_without_extension]
     arquivo.write(`import ${name_without_extension} from './${name_without_extension}';\n`);
   });
   arquivo.write('\nexport {\n');
@@ -52,19 +40,15 @@ function generateAutoImport(names, output_file_path, depth) {
   arquivo.end();
 }
 
-let depth = 0
 function traverseCurrentDirectory(directory) {
-  // directory.split('/')
   const fileNames = listDirectoryFiles(directory);
-  // console.log(directory);
   const outputFileName = 'index.js';
   const outputFilePath = path.join(directory, outputFileName);
-  generateAutoImport(fileNames, outputFilePath, depth);
+  generateAutoImport(fileNames, outputFilePath);
 
   fs.readdirSync(directory).forEach((sub_directory_name) => {
     const sub_directory_path = path.join(directory, sub_directory_name);
     if (fs.statSync(sub_directory_path).isDirectory()) {
-      depth += 1
       traverseCurrentDirectory(sub_directory_path);
     }
   });
@@ -109,8 +93,7 @@ function generateRootIndex(output_file_path) {
 
 const outputFilePath = path.join(directoryFolder, 'index.js');
 
-
 traverseCurrentDirectory(directoryFolder);
 generateRootIndex(outputFilePath);
-console.log(allDirectories);
+
 console.log('Files generated successfully.');
