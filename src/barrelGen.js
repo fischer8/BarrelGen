@@ -2,6 +2,7 @@
 
 const fs = require('fs');
 const path = require('path');
+
 const directoryFolder = process.argv[2];
 
 function listDirectoryFiles(directory) {
@@ -21,13 +22,25 @@ function listDirectoryFiles(directory) {
 
 const files = [];
 const directories = [];
+const allDirectories = { dirs: [], files: [] };
 
-function generateAutoImport(names, output_file_path) {
+const allDirectories2 = {
+  0: {
+    dirs: 'maincomponents',
+    files: ['button', 'nav']
+  }
+};
+
+console.log(allDirectories.length);
+
+function generateAutoImport(names, output_file_path, depth) {
   const arquivo = fs.createWriteStream(output_file_path);
+  allDirectories[depth] = {dirs: [...allDirectories[depth].dirs, output_file_path.split('/')[output_file_path.split('/').length - 2]], files: []};
   names.forEach((name) => {
     directories.push(output_file_path.split('/')[output_file_path.split('/').length - 2]);
     const name_without_extension = path.parse(name).name;
     files.push(name_without_extension);
+    allDirectories[depth].files = [...allDirectories[depth].files, name_without_extension]
     arquivo.write(`import ${name_without_extension} from './${name_without_extension}';\n`);
   });
   arquivo.write('\nexport {\n');
@@ -39,15 +52,19 @@ function generateAutoImport(names, output_file_path) {
   arquivo.end();
 }
 
+let depth = 0
 function traverseCurrentDirectory(directory) {
+  // directory.split('/')
   const fileNames = listDirectoryFiles(directory);
+  // console.log(directory);
   const outputFileName = 'index.js';
   const outputFilePath = path.join(directory, outputFileName);
-  generateAutoImport(fileNames, outputFilePath);
+  generateAutoImport(fileNames, outputFilePath, depth);
 
   fs.readdirSync(directory).forEach((sub_directory_name) => {
     const sub_directory_path = path.join(directory, sub_directory_name);
     if (fs.statSync(sub_directory_path).isDirectory()) {
+      depth += 1
       traverseCurrentDirectory(sub_directory_path);
     }
   });
@@ -65,11 +82,20 @@ function generateRootIndex(output_file_path) {
 
   const sortedImports = Object.fromEntries(Object.entries(imports).sort());
 
+  const bigImports = []
   for (const [directory, components] of Object.entries(sortedImports)) {
     const sortedComponents = components.sort();
-    const importLine = `import { ${sortedComponents.join(', ')} } from './${directory}';`;
-    file.write(importLine + '\n');
+    let importLine = '';
+    if(sortedComponents.length > 1){
+      bigImports.push(`\nimport { \n  ${sortedComponents.join(',\n  ')}\n} from './${directory}';\n`);
+    } else {
+      importLine = `import { ${sortedComponents.join(', ')} } from './${directory}';\n`;
+    }
+    file.write(importLine);
   }
+  bigImports.sort((imp) => imp.length - imp.length).forEach((bigImport) => {
+    file.write(bigImport)
+  })
 
   file.write('\nexport {\n');
   const sortedFiles = files.sort();
@@ -83,7 +109,8 @@ function generateRootIndex(output_file_path) {
 
 const outputFilePath = path.join(directoryFolder, 'index.js');
 
+
 traverseCurrentDirectory(directoryFolder);
 generateRootIndex(outputFilePath);
-
+console.log(allDirectories);
 console.log('Files generated successfully.');
