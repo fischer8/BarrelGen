@@ -4,7 +4,6 @@ This script generates an index.js file that performs sorted module "barreling" o
 
 ![Example](/examples/barrelgen.gif)
 
-
 <h3>
   Install
 </h3>
