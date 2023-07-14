@@ -11,7 +11,7 @@ This script generates an index.js file that performs sorted module "barreling" o
 ```
 $ npm install -g barrelgen
 ```
-#
+
 <h4>
   To run the script use the following command
 </h4>
