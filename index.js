@@ -5,6 +5,9 @@ const path = require('path');
 
 const directoryFolder = process.argv[2];
 
+const files = [];
+const directories = [];
+
 function listDirectoryFiles(directory) {
   const files = [];
   fs.readdirSync(directory).forEach((file_name) => {
@@ -19,9 +22,6 @@ function listDirectoryFiles(directory) {
   });
   return files;
 }
-
-const files = [];
-const directories = [];
 
 function generateAutoImport(names, output_file_path) {
   const arquivo = fs.createWriteStream(output_file_path);
@@ -65,8 +65,8 @@ function generateRootIndex(output_file_path) {
   });
 
   const sortedImports = Object.fromEntries(Object.entries(imports).sort());
-
   const bigImports = []
+
   for (const [directory, components] of Object.entries(sortedImports)) {
     const sortedComponents = components.sort();
     let importLine = '';
