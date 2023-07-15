@@ -18,7 +18,6 @@ $ npm install -g barrelgen
 $ barrelgen /path/to/directory
 ```
 #
-####
 
 <h3>
   Usage example
@@ -27,6 +26,8 @@ $ barrelgen /path/to/directory
 ![Gif-Example](https://raw.githubusercontent.com/fischer8/BarrelGen/src/Examples/barrelgen.gif)
 
 ![Img-Example](https://raw.githubusercontent.com/fischer8/BarrelGen/src/Examples/bgen-example.jpg)
+
+[Folder structure used in the example above](https://github.com/fischer8/BarrelGen/tree/src/Examples/Components)
 
 
 
