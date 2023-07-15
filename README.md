@@ -1,13 +1,10 @@
 # BarrelGen
 
-
 This script generates an index.js file that performs sorted module "barreling" of the files from any directory and subdirectories of the provided path. The "barrel" consists of creating an index file that exports all the components contained in a directory, making it easier to import them into other files. 
 
+![Gif-Example](https://raw.githubusercontent.com/fischer8/BarrelGen/main/examples/barrelgen.gif)
 
-![Gif](https://raw.githubusercontent.com/fischer8/BarrelGen/main/examples/barrelgen.gif)
-
-![Example](examples/example.jpg)
-</section>
+![Img-Example](https://raw.githubusercontent.com/fischer8/BarrelGen/main/examples/example.jpg)
 
 <h3>
   Install
