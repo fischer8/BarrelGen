@@ -24,9 +24,9 @@ $ barrelgen /path/to/directory
   Usage example
 </h3>
 
-![Gif-Example](https://raw.githubusercontent.com/fischer8/BarrelGen/main/examples/barrelgen.gif)
+![Gif-Example](https://raw.githubusercontent.com/fischer8/BarrelGen/src/Examples/barrelgen.gif)
 
-![Img-Example](https://raw.githubusercontent.com/fischer8/BarrelGen/main/examples/bgen-example.jpg)
+![Img-Example](https://raw.githubusercontent.com/fischer8/BarrelGen/src/Examples/bgen-example.jpg)
 
 
 
