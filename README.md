@@ -27,7 +27,7 @@ $ barrelgen /path/to/directory
 
 ![Img-Example](https://raw.githubusercontent.com/fischer8/BarrelGen/src/Examples/bgen-example.jpg)
 
-[Folder structure used in the example above](https://github.com/fischer8/BarrelGen/tree/src/Examples/Components)
+[Folder structure used in the example](https://github.com/fischer8/BarrelGen/tree/src/Examples/Components)
 
 
 
