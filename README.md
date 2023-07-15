@@ -26,7 +26,7 @@ $ barrelgen /path/to/directory
 
 ![Gif-Example](https://raw.githubusercontent.com/fischer8/BarrelGen/main/examples/barrelgen.gif)
 
-![Img-Example](https://raw.githubusercontent.com/fischer8/BarrelGen/main/examples/example.jpg)
+![Img-Example](https://raw.githubusercontent.com/fischer8/BarrelGen/main/examples/bgen-example.jpg)
 
 
 
