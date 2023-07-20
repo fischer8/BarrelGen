@@ -5,8 +5,7 @@
   "main": "",
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1",
-    "jsbarrelgen": "node src/barrelGen.js",
-    "pybarrelgen": "python3 src/barrelGen.py"
+    "barrelgen": "node ./barrelGen.js"
   },
   "author": "fischer8",
   "license": "ISC",
