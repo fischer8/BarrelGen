@@ -4,9 +4,8 @@ This is the branch for the source files. The BarrelGen has been developed in Jav
 
 #
 
-Javascript
 ```
-$ npm run jsbarrelgen /path/to/directory
+$ npm run barrelgen /path/to/directory
 ```
 
 
