@@ -14,7 +14,7 @@ function listDirectoryFiles(directory) {
     const file_path = path.join(directory, file_name);
     if (
       fs.statSync(file_path).isFile() &&
-      (file_name.endsWith('.js') || file_name.endsWith('.jsx')) &&
+      (file_name.endsWith('.js') || file_name.endsWith('.jsx')) || file_name.endsWith('.tsx') &&
       !file_name.startsWith('index')
     ) {
       files.push(file_name);
